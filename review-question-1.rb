@@ -1,3 +1,5 @@
+require 'pry'
+
 ## QUESTION 1
 
 pokemon = [
@@ -59,6 +61,37 @@ pokemon = [
   ]
 }
 ]
+#binding.pry
+
+#puts pokemon[0][:abilities][0][:ability][:url]
+
+pokemon_over_40 = pokemon.find do |pokemon|
+  pokemon[:base_experience] > 40
+end
+
+#puts pokemon_over_40
+
+all_pokemon_over_40 = pokemon.select do |pokemon|
+  pokemon[:base_experience] > 40
+end
+
+#puts all_pokemon_over_40
+
+
+names = pokemon.map do |pokemon|
+  pokemon[:name]
+end
+#puts names
+def weight(pokemon)
+weight_over_60 = pokemon.select do |pokemon|
+  pokemon[:weight] > 60
+end
+
+puts weight_over_60.any?
+end
+
+weight(pokemon)
+
 
 
 # How would you get the url for Bulbasaur's ability?
